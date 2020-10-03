@@ -1,11 +1,3 @@
-variable "access_key" {
-    default = "AKIAZMDHVEYK5PTUEM6A"
-}
-
-variable "secret_key" {
-    default = "SjuzYJnA7KM9WwXaPPkbJ3ITtGxyHHe13xom+7OW"
-}
-
 variable "aws_region" {
     default = "eu-west-3"
 }
