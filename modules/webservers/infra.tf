@@ -2,7 +2,7 @@ resource "aws_instance" "ph-1-web_nodes" {
   count                       = var.web_nodes_count
   ami                         = var.ami_id
   instance_type               = var.instance_type
-  user_data                   = data.template_file.web.rendered
+  user_data                   = data.template_file.ph1-web.rendered
   subnet_id                   = data.aws_subnet_ids.default.id
   key_name                    = var.key_name
   root_block_device {
