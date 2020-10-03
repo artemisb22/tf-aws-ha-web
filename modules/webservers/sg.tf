@@ -35,7 +35,4 @@ data "aws_default_security_group" "default" {
       protocol  = "tcp"
       self      = true
     }
-    lifecycle {
-      create_before_destroy = true
-    }
   }
