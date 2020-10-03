@@ -4,8 +4,8 @@
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.7, < 0.14 |
-| aws | >= 2.68, < 4.0 |
+| terraform | >= 0.12.7 |
+| aws | >= 2.68 |
 
 
 ## Usage
