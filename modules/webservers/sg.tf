@@ -4,36 +4,13 @@ data "aws_vpc" "default" {
   default = true
 }
 
-resource "aws_security_group" "default" {
-  name        = "default"
-  vpc_id = data.aws_vpc.default.id
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.default.id
 
-    egress {
-      from_port = 0
-      to_port = 0
-      protocol = "-1"
-      cidr_blocks = [
-        "0.0.0.0/0"
-      ]
-    }
-    ingress {
-      from_port       = 22
-      to_port         = 22
-      protocol        = "tcp"
-      cidr_blocks     = var.ssh_access_cidr_blocks
-      security_groups = var.ssh_access_security_groups
-    }
-    ingress {
-      from_port       = 80
-      to_port         = 80
-      protocol        = "tcp"
-      cidr_blocks     = ["0.0.0.0/0"]
-      security_groups = var.web_access_security_groups
-    }
-    ingress {
-      from_port = 80
-      to_port   = 80
-      protocol  = "tcp"
-      self      = true
-    }
+  ingress {
+    protocol  = -1
+    self      = true
+    from_port = 0
+    to_port   = 0
   }
+}
