@@ -4,7 +4,7 @@ data "aws_vpc" "default" {
   default = true
 }
 
-resource "aws_default_security_group" "default" {
+data "aws_default_security_group" "default" {
   vpc_id = data.aws_vpc.default.id
 
     egress {
