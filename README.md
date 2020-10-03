@@ -8,6 +8,11 @@ AWS Terraform module which creates two web servers and two HAproxy in HA mode. B
 | terraform | >= 0.12.7 |
 | aws | >= 2.68 |
 
+These types of resources are supported:
+
+* [EC2 instance]
+* [ELB]
+* [Elastic IP]
 
 ## Usage
 
