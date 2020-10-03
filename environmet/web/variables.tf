@@ -18,14 +18,6 @@ variable "ami_id" {
     default = "ami-057cc319e24b70b63"
 }
 
-variable "vpc_id" {
-  default = "vpc-48709220"
-}
-
-variable "subnet_ids" {
-  default = "subnet-eb5e7d90"
-}
-
 variable "elb_subnet_id" {
   default = ["subnet-eb5e7d90", "subnet-9f384cd2"]
 }

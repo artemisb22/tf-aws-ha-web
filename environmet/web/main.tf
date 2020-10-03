@@ -6,8 +6,6 @@ module "webservers" {
 	instance_type	= var.instance_type
 	root_volume_size	= var.root_volume_size
 	ami_id	= var.ami_id
-	vpc_id	= var.vpc_id
-	subnet_ids	= var.subnet_ids
     elb_subnet_id = var.elb_subnet_id
 
 	### Security Access Variables ###
@@ -24,4 +22,5 @@ module "webservers" {
 	haproxy_access_security_groups	= []
 
 	haproxy_nodes_count = var.haproxy_nodes_count
+
 }
