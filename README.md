@@ -19,6 +19,7 @@ These types of resources are supported:
 To run this example you need to cd into environment/web directory and execute:
 
 ```bash
+$ cd tf-aws-ha-web/environment/web/
 $ export AWS_ACCESS_KEY_ID="my-accesskey"
 $ export AWS_SECRET_ACCESS_KEY="my-secretkey"
 $ terraform init 
