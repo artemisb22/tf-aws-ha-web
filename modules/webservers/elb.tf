@@ -1,18 +1,18 @@
-data "aws_subnet_ids" "default" {
-  vpc_id = data.aws_vpc.default.id
+resource "aws_default_subnet" "default" {                                   
+  availability_zone = "eu-west-3"                        
 }
 
 resource "aws_lb" "web-lb" {
     name                = "web-ELB"
     load_balancer_type  = "application"
-    subnets             = data.aws_subnet_ids.default.ids
+    subnets             = data.aws_subnet.default.ids
     depends_on          = [aws_instance.ph-1-web_nodes]
 }
 
   resource "aws_lb" "haproxy-lb" {
     name                = "haproxy-ELB"
     load_balancer_type  = "network"
-    subnets             = data.aws_subnet_ids.default.ids
+    subnets             = data.aws_subnet.default.ids
     internal            = true
     depends_on          = [aws_instance.haproxy_nodes]
   }
