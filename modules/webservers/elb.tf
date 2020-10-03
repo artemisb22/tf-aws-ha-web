@@ -1,5 +1,6 @@
-resource "aws_subnet" "default" {                                   
-  availability_zone = "eu-west-3"                        
+data "aws_subnet" "default" {                                   
+  availability_zone = "eu-west-3"
+  
 }
 
 resource "aws_lb" "web-lb" {
