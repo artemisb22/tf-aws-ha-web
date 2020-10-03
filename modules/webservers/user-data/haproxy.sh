@@ -40,8 +40,8 @@ backend http_web
      option httpchk GET /health.html
      http-check expect rstatus 200
      balance roundrobin
-     server web1 ${NODE1_IP}:5000 check
-     server web2 ${NODE2_IP}:5000 check
+     server web1 ${NODE1_IP}:5000 check port 6000
+     server web2 ${NODE2_IP}:5000 check port 6000
 EOF
 
 chkconfig haproxy on
