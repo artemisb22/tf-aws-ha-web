@@ -1,4 +1,4 @@
-# AWS Terraform module for creating two web servers in HA mode and an ELB
+# AWS Terraform module for creating two web servers and two HAproxy in HA mode. Both the web servers and haproxy will be behind a aws elb.
 
 ## Requirements
 
