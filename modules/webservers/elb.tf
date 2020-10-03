@@ -1,4 +1,4 @@
-resource "aws_default_subnet" "default" {                                   
+resource "aws_subnet" "default" {                                   
   availability_zone = "eu-west-3"                        
 }
 
