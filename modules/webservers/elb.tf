@@ -5,14 +5,14 @@ resource "aws_subnet" "default" {
 resource "aws_lb" "web-lb" {
     name                = "web-ELB"
     load_balancer_type  = "application"
-    subnets             = data.aws_default_subnet.default.ids
+    subnets             = data.aws_subnet.default.ids
     depends_on          = [aws_instance.ph-1-web_nodes]
 }
 
   resource "aws_lb" "haproxy-lb" {
     name                = "haproxy-ELB"
     load_balancer_type  = "network"
-    subnets             = data.aws_default_subnet.default.ids
+    subnets             = data.aws_subnet.default.ids
     internal            = true
     depends_on          = [aws_instance.haproxy_nodes]
   }
