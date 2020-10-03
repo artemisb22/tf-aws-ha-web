@@ -1,14 +1,18 @@
-  resource "aws_lb" "web-lb" {
+data "aws_subnet_ids" "default" {
+  vpc_id = data.aws_vpc.default.id
+}
+
+resource "aws_lb" "web-lb" {
     name                = "web-ELB"
     load_balancer_type  = "application"
-    subnets             = var.elb_subnet_id
-    depends_on          = [aws_instance.web_nodes]
+    subnets             = data.aws_subnet_ids.default.ids
+    depends_on          = [aws_instance.ph-1-web_nodes]
 }
 
   resource "aws_lb" "haproxy-lb" {
     name                = "haproxy-ELB"
     load_balancer_type  = "network"
-    subnets             = var.elb_subnet_id
+    subnets             = data.aws_subnet_ids.default.ids
     internal            = true
     depends_on          = [aws_instance.haproxy_nodes]
   }
@@ -17,7 +21,7 @@ resource "aws_lb_target_group" "web-nodes" {
   name     = "web-targets"
   port     = 5000
   protocol = "HTTP"
-  vpc_id   = var.vpc_id
+  vpc_id   = data.aws_vpc.default.id
 
   health_check {
     healthy_threshold   = 2
@@ -36,7 +40,7 @@ resource "aws_lb_target_group" "web-nodes" {
     name     = "haproxy-targets"
     port     = 80
     protocol = "TCP"
-    vpc_id   = var.vpc_id
+    vpc_id   = data.aws_vpc.default.id
   }
 
 

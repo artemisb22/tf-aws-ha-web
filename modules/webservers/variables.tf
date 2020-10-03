@@ -1,4 +1,3 @@
-variable "vpc_id" {}
 variable "ami_id" {}
 variable "key_name" {}
 variable "instance_type" {}
@@ -14,9 +13,6 @@ variable "web_access_security_groups" {
 }
 
 variable "web_access_cidr_blocks" {
-}
-
-variable "subnet_ids" {
 }
 
 variable "web_nodes_count" {
