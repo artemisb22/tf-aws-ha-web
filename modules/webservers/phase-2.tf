@@ -21,9 +21,6 @@ resource "aws_instance" "web_nodes" {
 
 data "template_file" "web" {
   template = file( "${ path.module }/user-data/ph-2-web.sh" )
-  vars = {
-    SERVICE-2= lookup(aws_instance.web_nodes.tags, "Service")
-  }
 }
 
 resource "aws_eip" "web_eip" {
