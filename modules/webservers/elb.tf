@@ -1,7 +1,3 @@
-resource "aws_default_subnet" "default" {
-  availability_zone = "eu-west-3"
-}
-
 resource "aws_lb" "web-lb" {
     name                = "web-ELB"
     load_balancer_type  = "application"
