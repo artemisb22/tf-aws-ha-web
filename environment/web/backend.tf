@@ -9,7 +9,7 @@ terraform {
     bucket = "tf-bucket-lab"
     region = "eu-west-3"
     key = "tf-lab.tfstate"
-    dynamodb_table = "terraform-state-lock-dynamo"
+#    dynamodb_table = "terraform-state-lock-dynamo"
     encrypt = true
   }
 
