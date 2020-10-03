@@ -5,8 +5,8 @@ AWS Terraform module which creates two web servers and two HAproxy in HA mode. B
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.7 |
-| aws | >= 2.68 |
+| terraform | >= 0.13 |
+| aws | >= 3.9 |
 
 These types of resources are supported:
 
