@@ -21,7 +21,11 @@ variable "web_nodes_count" {
 variable "elb_subnet_id" {
   type = list(string)
 }
+variable "ph-1-service_name" {
+}
 
+variable "ph-2-service_name" {
+}
 variable "haproxy_access_security_groups" {
 }
 

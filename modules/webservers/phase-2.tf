@@ -3,7 +3,6 @@ resource "aws_instance" "web_nodes" {
   ami                         = var.ami_id
   instance_type               = var.instance_type
   user_data                   = data.template_file.web.rendered
-  subnet_id                   = data.aws_subnet.default.id
   key_name                    = var.key_name
   root_block_device {
     volume_size = var.root_volume_size
@@ -14,7 +13,7 @@ resource "aws_instance" "web_nodes" {
     Name        = "web-${count.index + 1}"
     Provisioner = "terraform"
     Role        = "web"
-    Service     = "blabla.everc.io"
+    ServiceName = var.ph-2-service_name
   }
 
 }
@@ -34,7 +33,6 @@ resource "aws_instance" "haproxy_nodes" {
   ami                         = var.ami_id
   instance_type               = var.instance_type
   user_data                   = data.template_file.haproxy.rendered
-  subnet_id                   = data.aws_subnet.default.id
   key_name                    = var.key_name
   depends_on = [aws_instance.web_nodes]
   root_block_device {
