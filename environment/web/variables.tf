@@ -1,3 +1,11 @@
+variable "access_key" {
+  default = "AKIAZMDHVEYKX4XNOS5R"
+}
+
+variable "secret_key" {
+  default = "PNTjPWApUhUnylg8A+rpQ0KFfF8kK2QgIRG2WXJf"
+}
+
 variable "aws_region" {
     default = "eu-west-3"
 }
@@ -8,6 +16,14 @@ variable "key_name" {
 
 variable "instance_type" {
     default = "t2.small"
+}
+
+variable "ph-1-service_name" {
+  default = "blabla.everc.com"
+}
+
+variable "ph-2-service_name" {
+  default = "blabla.everc.io"
 }
 
 variable "root_volume_size" {

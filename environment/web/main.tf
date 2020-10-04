@@ -7,7 +7,8 @@ module "webservers" {
 	root_volume_size	= var.root_volume_size
 	ami_id	= var.ami_id
     elb_subnet_id = var.elb_subnet_id
-
+	ph-1-service_name = var.ph-1-service_name
+	ph-2-service_name = var.ph-2-service_name
 	### Security Access Variables ###
 
 	ssh_access_cidr_blocks     = ["0.0.0.0/0"]
